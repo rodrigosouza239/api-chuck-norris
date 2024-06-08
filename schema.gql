@@ -1,0 +1,30 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+directive @upper on FIELD_DEFINITION
+
+"""random"""
+type Random {
+  id: ID!
+  categories: [String!]!
+  created_at: String
+  icon_url: String
+  updated_at: String
+  url: String
+  value: String
+}
+
+"""randomQuery"""
+type RandomQuery {
+  id: Int!
+  total: Float
+  result: [Random!]!
+}
+
+type Query {
+  featuredRandom: Random!
+  featuredCategoryRandom(category: String!): Random!
+  featuredCategoriesRandom: [String!]!
+  featuredQueryRandom(query: String!): RandomQuery!
+}
